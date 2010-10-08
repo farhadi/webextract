@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>WebExtract v1.0 :: {title}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		body {
+			background: #e5e5e5;
+			font: 0.8em sans-serif;
+			padding: 4em;
+		}
+
+		#container {
+			background: #fff;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+			border: 1px solid #aaa;
+			margin: 0 auto;
+			max-width: 65em;
+			min-width: 30em;
+			padding: 3em;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		a.dir {
+			background: url(/?images/dir.png) no-repeat left center;
+			padding-left: 20px;
+		}
+
+		span.file {
+			background: url(/?images/file.png) no-repeat left center;
+			padding-left: 20px;
+		}
+
+		span.archive {
+			background: url(/?images/archive.png) no-repeat left center;
+			padding-left: 20px;
+		}
+
+		a.up {
+			background: url(/?images/up.png) no-repeat left center;
+			padding-left: 20px;
+			font-size: 1.1em;
+		}
+
+		#footer {
+			text-align: center;
+			font-size: 0.9em;
+			margin: 1em;
+		}
+
+		h1 {
+			font-size: 160%;
+			font-weight: normal;
+			margin: 0;
+		}
+
+		#header {
+			border-bottom:1px solid #ddd;
+			margin-bottom: 0.6em;
+		}
+
+		#user {
+			float: right;
+			margin-top: -1.5em;
+		}
+
+		#content {
+			clear: both;
+		}
+
+		table {
+			margin: 1em auto 0;
+			width: 90%;
+		}
+
+		tbody tr:hover {
+			background: #ffd;
+		}
+
+		th {
+			text-align: left;
+			white-space: nowrap;
+			padding: 0.2em;
+		}
+
+		td {
+			font-size: 0.8em;
+			padding: 0.2em 0.8em 0.2em 0;
+		}
+
+		.size, .mtime {
+			white-space: nowrap;
+		}
+
+		.name {
+			width: 100%;
+		}
+
+		td.size {
+			text-align: right;
+		}
+	</style>
+  </head>
+  <body>
+	  <div id="container">
+		  <div id="header">
+			  <h1>{title}</h1>
+			  <div id="user">{user}</div>
+		  </div>
+		  <div id="content">
+			{content}
+		  </div>
+		  
+	  </div>
+	  <div id="footer">
+		Powered by <a href="http://github.com/farhadi/WebExtract">WebExtract</a>
+	  </div>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+#!/bin/bash
+##
+# WebExtract init.d script
+# A web-based utility to extract archive files for unix systems.
+#
+# @link        http://github.com/farhadi/webextract
+# @copyright   Copyright 2010, Ali Farhadi (http://farhadi.ir/)
+# @license     GNU General Public License 3.0 (http://www.gnu.org/licenses/gpl.html)
+#
+
+echo_success() {
+	echo -en "\\033[60G"
+	echo -n "["
+	echo -en "\\033[1;32m"
+	echo -n $"  OK  "
+	echo -en "\\033[0;39m"
+	echo -n "]"
+	echo -ne "\r"
+	return 0
+}
+
+echo_failure() {
+	echo -en "\\033[60G"
+	echo -n "["
+	echo -en "\\033[1;31m"
+	echo -n $"FAILED"
+	echo -en "\\033[0;39m"
+	echo -n "]"
+	echo -ne "\r"
+	return 1
+}
+
+if [ -f /etc/webextract.conf ]; then
+        source /etc/webextract.conf
+else
+        echo "/etc/webextract.conf not found."
+        exit 1
+fi
+
+case "$1" in
+start)
+        echo -n "Starting webextract:"
+        if $PYTHON /usr/share/webextract/webextract.py start $PORT; then
+                echo_success
+        else
+                echo_failure
+        fi
+        echo
+        ;;
+stop)
+        echo -n "Stopping webextract:"
+        if $PYTHON /usr/share/webextract/webextract.py stop; then
+                echo_success
+        else
+                echo_failure
+        fi
+        echo
+        ;;
+restart)
+        $0 stop
+        $0 start
+        ;;
+status)
+        $PYTHON /usr/share/webextract/webextract.py status
+        ;;
+*)
+        echo "usage: $0 [start|stop|restart|status]"
+esac
+exit 0
