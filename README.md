@@ -41,14 +41,14 @@ How to install WebExtract?
 		make
 		make install
 
-2. Download WebExtract package from http://github.com/farhadi/WebExtract/tarball/master :
+2. Download latest WebExtract package from [here](http://github.com/downloads/farhadi/webextract/webextract-latest.tar.gz) :
 
-		wget http://github.com/farhadi/WebExtract/tarball/master
+		wget http://github.com/downloads/farhadi/webextract/webextract-latest.tar.gz
 
 3. Unpack it and go to its folder:
 
-		tar xvfz farhadi-WebExtract-*.tar.gz
-		cd farhadi-WebExtract-*
+		tar xvfz webextract-latest.tar.gz
+		cd webextract-*
 
 4. Install it as root:
 
@@ -95,5 +95,5 @@ And use `/etc/init.d/webextract status` to see the service status.
 
 Where can I report bugs, suggestions and feature requests?
 ----------------------------------------------------------
-Either you can send your reports using project's issue tracker at http://github.com/farhadi/WebExtract/issues
+Either you can send your reports using [WebExtract's issue tracker](http://github.com/farhadi/webextract/issues)
 or contact me directly using email at <a.farhadi@gmail.com>.
