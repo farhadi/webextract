@@ -1,7 +1,21 @@
 #!/bin/bash
-##
-# WebExtract init.d script
-# A web-based utility to extract archive files for unix systems.
+#
+# webextract	Init file for WebExtract service
+#
+# chkconfig:	345 90 10
+# description:	WebExtract service
+#
+
+### BEGIN INIT INFO
+# Provides:          webextract
+# Required-Start:    $remote_fs $network
+# Required-Stop:     $remote_fs $network
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: WebExtract service
+# Description:       A web-based utility to extract archive files for unix systems.
+### END INIT INFO
+
 #
 # @link        http://github.com/farhadi/webextract
 # @copyright   Copyright 2010, Ali Farhadi (http://farhadi.ir/)

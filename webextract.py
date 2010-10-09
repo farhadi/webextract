@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-##
+#
 # WebExtract v1.0
 # A web-based utility to extract archive files for unix systems.
 #
