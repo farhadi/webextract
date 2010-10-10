@@ -55,9 +55,10 @@ class WebExtractHandler(BaseHTTPRequestHandler):
 			if auth.startswith('Basic '):
 				auth = base64.b64decode(auth[6:])
 				username, password = auth.split(':', 1)
-				hashpass = spwd.getspnam(username)[1]
-				if crypt.crypt(password, hashpass) == hashpass:
-					return username
+				if username != 'root':
+					hashpass = spwd.getspnam(username)[1]
+					if crypt.crypt(password, hashpass) == hashpass:
+						return username
 		except:
 			pass
 
