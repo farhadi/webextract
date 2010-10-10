@@ -41,14 +41,14 @@ How to install WebExtract?
 		make
 		make install
 
-2. Download latest WebExtract package from [here](http://github.com/downloads/farhadi/webextract/webextract-latest.tar.gz) :
+2. Download WebExtract package from [here](http://github.com/downloads/farhadi/webextract/webextract-1.0.tar.gz) :
 
-		wget http://github.com/downloads/farhadi/webextract/webextract-latest.tar.gz
+		wget http://github.com/downloads/farhadi/webextract/webextract-1.0.tar.gz
 
 3. Unpack it and go to its folder:
 
-		tar xvfz webextract-latest.tar.gz
-		cd webextract-*
+		tar xvfz webextract-1.0.tar.gz
+		cd webextract-1.0
 
 4. Install it as root:
 
