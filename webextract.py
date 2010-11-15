@@ -212,5 +212,5 @@ if __name__ == "__main__":
 			sys.exit(2)
 		sys.exit(0)
 	else:
-		print "usage: %s start|stop" % sys.argv[0]
+		print "usage: %s start|stop|status" % sys.argv[0]
 		sys.exit(2)
