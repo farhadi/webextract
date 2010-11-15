@@ -76,7 +76,7 @@ class WebExtractHandler(BaseHTTPRequestHandler):
 				return
 
 			if (
-				re.match('/\?images/\w+\.png', self.path) and
+				re.match('^/\?images/\w+\.png$', self.path) and
 				os.path.exists(os.path.dirname(sys.argv[0]) + os.sep + self.path[2:])
 			):
 				self.render(image=self.path[2:])
