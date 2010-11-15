@@ -84,10 +84,11 @@ class WebExtractHandler(BaseHTTPRequestHandler):
 
 			username = self.auth()
 			if username:
-				path = pwd.getpwnam(username)[5] + urllib.unquote_plus(self.path)
+				homefolder = pwd.getpwnam(username)[5]
+				path = os.path.abspath(homefolder + urllib.unquote_plus(self.path))
 				data = {'user': 'Welcome <b>%s</b>! <a href="/?logout">Logout</a>' % username}
 
-				if not os.path.exists(path):
+				if not os.path.exists(path) or not path.startswith(homefolder):
 					self.render(
 						status=404,
 						title='Not Found',
@@ -97,8 +98,8 @@ class WebExtractHandler(BaseHTTPRequestHandler):
 					return
 
 				if os.path.isdir(path):
-					if not path.endswith(os.sep):
-						path += os.sep
+					path += os.sep
+					if not self.path.endswith(os.sep):
 						self.path += os.sep
 					data['content'] = ''
 					if self.path != os.sep:
@@ -116,7 +117,7 @@ class WebExtractHandler(BaseHTTPRequestHandler):
 							mtime = ''
 						if os.path.isdir(path + file):
 							dirs.append(
-								('<tr><td class="name"><a class="dir" href="%s">%s</a></td>' +
+								('<tr><td class="name"><a class="dir" href="%s/">%s</a></td>' +
 								'<td></td><td class="mtime">%s</td></tr>') %
 								(self.path + urllib.quote_plus(file), file, mtime)
 							)
